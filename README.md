@@ -50,3 +50,27 @@ FastAPI is known for its speed, ease of use and modern features like asynchronou
 python -m venv fastapi-env
 source fastapi-env/bin/activate  # On Windows use `fastapi-env\Scripts\activate`
 
+## 2. Installing Dependencies
+
+Install the necessary dependencies:
+
+```bash
+pip install fastapi uvicorn
+
+Additional dependencies can be installed as needed:
+
+pip install sqlalchemy pydantic jinja2 passlib httpx
+
+## 3. Running a Basic FastAPI Application
+Create a simple FastAPI application:
+# main.py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+Run the application using uvicorn:
+uvicorn main:app --reload
