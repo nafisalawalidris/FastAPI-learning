@@ -3,3 +3,7 @@
 *.pyo
 *.pyd
 __pycache__/
+
+# Virtual environment
+fastapi-env/
+
