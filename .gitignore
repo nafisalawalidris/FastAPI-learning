@@ -1,21 +1,5 @@
 # Byte-compiled files
-__pycache__/
-*.py[cod]
-
-# Virtual environment
-fastapi-env/
-
-# Environment variables
-.env
-
-# VSCode settings
-.vscode/
-
-# Miscellaneous
-*.log
-*.pot
 *.pyc
 *.pyo
 *.pyd
-*.db
-*.sqlite3
+__pycache__/
