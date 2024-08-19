@@ -1,0 +1,10 @@
+echo "
+# Byte-compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment
+fastapi_learning/
+" > .gitignore
