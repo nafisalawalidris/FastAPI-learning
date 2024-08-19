@@ -9,6 +9,9 @@ def root():
     # Returning a JSON response with a "message" key and "Hello World" as the value
     return {"message": "Hello World"}
 
+
+# Define a route for the "/posts" path
 @app.get("/posts")
 def get_posts():
+    # Return a JSON response with placeholder data for posts
     return {"data": "This is your posts"}
