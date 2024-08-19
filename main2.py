@@ -5,6 +5,10 @@ app = FastAPI()
 
 # Defining a GET endpoint at the root URL ("/")
 @app.get("/")
-async def root():
+def root():
     # Returning a JSON response with a "message" key and "Hello World" as the value
     return {"message": "Hello World"}
+
+@app.get("/posts")
+def get_posts():
+    return {"data": "This is your posts"}
