@@ -1,10 +1,10 @@
-echo "
-# Byte-compiled files
-*.pyc
+# Python compiled files
+__pycache__/
+*.py[cod]
 *.pyo
 *.pyd
-__pycache__/
 
 # Virtual environment
+venv/
 fastapi_learning/
-" > .gitignore
+

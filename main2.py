@@ -1,7 +1,16 @@
-from fastapi import FastAPI, Body  # Importing FastAPI and Body from the fastapi module
+from fastapi import FastAPI  # Importing FastAPI from the fastapi module
+from pydantic import BaseModel  # Importing BaseModel from pydantic for data validation
+from typing import Optional  # Importing Optional from typing for optional fields
 
 # Creating an instance of the FastAPI class
 app = FastAPI()
+
+# Define a Pydantic model for the post
+class Post(BaseModel):
+    title: str  # The title of the post
+    content: str  # The content of the post
+    published: bool = True  # Whether the post is published (default is True)
+    rating: Optional[int] = None  # The rating of the post (optional, default is None)
 
 # Defining a GET endpoint at the root URL ("/")
 @app.get("/")
@@ -17,8 +26,10 @@ def get_posts():
 
 # Define a route for the "/createposts" path with a POST method
 @app.post("/createposts")
-def create_posts(payload: dict = Body(...)):
-    # Print the payload to the console (for debugging)
-    print(payload)
-    # Return a JSON response indicating successful post creation
-    return {"new_post": f"title: {payload['title']} content: {payload['content']}"}
+def create_posts(post: Post):
+    # Print the rating of the new_post data to the console (for debugging)
+    print(post.rating)  # Accessing the rating field of the post object
+    # Print the entire post data to the console (for debugging)
+    print(post.dict())
+    # Return a JSON response with the new created post data
+    return {"data": post.dict()}
